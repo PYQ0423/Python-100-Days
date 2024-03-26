@@ -11,9 +11,10 @@ from math import sqrt
 
 class Point(object):
 
-    def __init__(self, x=0, y=0):
+    def __init__(self, x=0, y=0, z=0):
         self._x = x
         self._y = y
+        self._z = z
 
     def move_to(self, x, y):
         self._x = x
@@ -34,9 +35,18 @@ class Point(object):
 
 class Line(object):
 
-    def __init__(self, start=Point(0, 0), end=Point(0, 0)):
+    def __init__(self, start=Point(0, 0), end=Point(0, 0), z=0):
         self._start = start
         self._end = end
+        self._z = z
+
+    @property
+    def z(self):
+        return self._z
+
+    @z.setter
+    def z(self, z):
+        self._z = z
 
     @property
     def start(self):
